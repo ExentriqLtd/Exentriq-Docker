@@ -1,0 +1,21 @@
+services:
+  mongo:
+    image: mongo:4.4.29
+    container_name: mongo
+    build:
+      context: ./configs/services/mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./configs/services/mongo/mongod.conf:/etc/mongod.conf:cached
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:7.2.4
+    container_name: redis
+    ports:
+      - 6379:6379
+
+volumes:
+  mongo-data:
