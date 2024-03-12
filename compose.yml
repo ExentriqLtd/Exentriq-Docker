@@ -17,5 +17,19 @@ services:
     ports:
       - 6379:6379
 
+  ema:
+    container_name: ema
+    build:
+      dockerfile: ./Exentriq-Docker/configs/projects/ema/Dev.Dockerfile
+      context: ../
+      no_cache: true
+    ports:
+      - 3002:3002
+    volumes:
+      - ../Exentriq-EMA:/var/app/Exentriq-EMA
+    depends_on:
+      - redis
+      - mongo
+
 volumes:
   mongo-data:

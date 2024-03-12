@@ -1,0 +1,38 @@
+# the context is the project's parent directory. it's needed to get MSP and other packages
+#
+# docker build ../.. -f Local.Dockerfile --tag ema-1.0.0 --no-cache
+# docker run --name ema ema-1.0.0
+
+# Ignore everything
+*
+
+# Allow files and directories
+!meteor-easy-search/packages
+!meteor-streamer/packages
+!exentriq-packages
+!Exentriq-MSP/packages/
+!Exentriq-MSP/npm/
+
+# EMA
+!Exentriq-EMA/.meteor
+!Exentriq-EMA/client
+!Exentriq-EMA/i18n
+!Exentriq-EMA/packages
+!Exentriq-EMA/public
+!Exentriq-EMA/server
+!Exentriq-EMA/package.json
+!Exentriq-EMA/project-tap.i18n
+!Exentriq-EMA/run_template.sh
+!Exentriq-EMA/scss-config.json
+!Exentriq-EMA/settings-local.json
+!Exentriq-EMA/test.js
+## Ignore unnecessary files inside allowed directories
+Exentriq-EMA/.meteor/local
+**/*node_modules/
+
+## Ignore meta files
+**/*~
+**/*.log
+**/*.npm
+**/.DS_Store
+**/Thumbs.db
