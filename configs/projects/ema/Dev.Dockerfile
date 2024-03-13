@@ -13,9 +13,12 @@ COPY ./exentriq-packages /var/app/exentriq-packages
 COPY ./Exentriq-MSP/ /var/app/Exentriq-MSP/
 COPY ./Exentriq-EMA/ /var/app/Exentriq-EMA
 
-# RUN cd ../Exentriq-MSP/npm/exentriq-components && npm i
+RUN npm config set registry https://registry.npmjs.org/
+RUN cd ../Exentriq-MSP/npm/exentriq-components && npm i
+RUN cd ../Exentriq-MSP/npm/exentriq-components && npm run build_meteor
 
-RUN meteor npm install
+RUN meteor npm i
+
 
 #RUN chown -Rh node /var/app/Exentriq-EMA/.meteor/local
 RUN chmod -R 700 /var/app/Exentriq-EMA/.meteor/local

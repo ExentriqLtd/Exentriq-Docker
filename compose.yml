@@ -27,6 +27,7 @@ services:
       - 3002:3002
     volumes:
       - ../Exentriq-EMA:/var/app/Exentriq-EMA
+      - ../Exentriq-MSP:/var/app/Exentriq-MSP:cached
     depends_on:
       - redis
       - mongo
