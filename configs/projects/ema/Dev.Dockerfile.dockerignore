@@ -24,7 +24,7 @@
 !Exentriq-EMA/project-tap.i18n
 !Exentriq-EMA/run_template.sh
 !Exentriq-EMA/scss-config.json
-!Exentriq-EMA/settings-local.json
+!Exentriq-EMA/settings-development.json
 !Exentriq-EMA/test.js
 ## Ignore unnecessary files inside allowed directories
 Exentriq-EMA/.meteor/local
