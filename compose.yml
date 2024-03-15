@@ -25,12 +25,21 @@ services:
       no_cache: true
     ports:
       - 3002:3002
-    volumes:
-      - ../Exentriq-EMA:/var/app/Exentriq-EMA
-      - ../Exentriq-MSP:/var/app/Exentriq-MSP:cached
     depends_on:
       - redis
       - mongo
+    develop:
+      watch:
+        - action: sync
+          path: ../Exentriq-MSP/packages
+          target: /var/app/Exentriq-MSP/packages
+          ignore:
+            - ../Exentriq-MSP/packages/**/*.npm
+        - action: sync
+          path: ../Exentriq-EMA/packages
+          target: /var/app/Exentriq-EMA/packages
+          ignore:
+            - ../Exentriq-EMA/packages/**/*.npm
 
 volumes:
   mongo-data:
