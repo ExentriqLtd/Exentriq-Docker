@@ -12,10 +12,11 @@ RUN curl https://install.meteor.com/\?release\=1.8.0.1 | sh
 COPY ./meteor-easy-search/packages ${APP_PATH}/meteor-easy-search/packages
 COPY ./meteor-streamer/packages ${APP_PATH}/meteor-streamer/packages
 COPY ./exentriq-packages ${APP_PATH}/exentriq-packages
-COPY ./Exentriq-MSP/ ${APP_PATH}/Exentriq-MSP/
+COPY ./Exentriq-MSP/ ${APP_PATH}/Exentriq-MSP
 COPY ./Exentriq-EMA/ ${APP_PATH}/Exentriq-EMA
 
 RUN npm config set registry https://registry.npmjs.org/
+RUN cd ${APP_PATH}/Exentriq-MSP/npm/exentriq-components && npm rebuild node-sass
 RUN cd ${APP_PATH}/Exentriq-MSP/npm/exentriq-components && npm i
 RUN cd ${APP_PATH}/Exentriq-MSP/npm/exentriq-components && npm run build_meteor
 
