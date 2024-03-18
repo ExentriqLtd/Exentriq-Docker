@@ -25,7 +25,6 @@
 !Exentriq-EMA/run_template.sh
 !Exentriq-EMA/scss-config.json
 !Exentriq-EMA/settings-development.json
-!Exentriq-EMA/test.js
 ## Ignore unnecessary files inside allowed directories
 Exentriq-EMA/.meteor/local
 **/*node_modules/
