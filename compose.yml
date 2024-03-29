@@ -28,18 +28,40 @@ services:
     depends_on:
       - redis
       - mongo
-    develop:
-      watch:
-        - action: sync
-          path: ../Exentriq-MSP/packages
-          target: /var/app/Exentriq-MSP/packages
-          ignore:
-            - ../Exentriq-MSP/packages/**/*.npm
-        - action: sync
-          path: ../Exentriq-EMA/packages
-          target: /var/app/Exentriq-EMA/packages
-          ignore:
-            - ../Exentriq-EMA/packages/**/*.npm
+    volumes:
+      - ../Exentriq-EMA/node_modules:/var/app/Exentriq-EMA/node_modules
+      - mutagen:/var/app/Exentriq-EMA/.meteor/local
+      - ../Exentriq-MSP/packages:/var/app/Exentriq-MSP/packages
+#    develop:
+#      watch:
+#        - action: sync
+#          path: ../Exentriq-MSP/packages
+#          target: /var/app/Exentriq-MSP/packages
+#          ignore:
+#            - ../Exentriq-MSP/packages/**/*.npm
+#        - action: sync
+#          path: ../Exentriq-EMA/packages
+#          target: /var/app/Exentriq-EMA/packages
+#          ignore:
+#            - ../Exentriq-EMA/packages/**/*.npm
+
+x-mutagen:
+  sync:
+    defaults:
+      ignore:
+        vcs: true
+      mode: "two-way-resolved"
+
+    mutagen:
+      alpha: "./../Exentriq-EMA/.meteor/local"
+      beta: "volume://mutagen"
 
 volumes:
+  mutagen:
   mongo-data:
+  ema-node-modules:
+  ema-meteor-local:
+  msp-packages-npm:
+
+  custom-board-node-modules:
+  custom-board-build:
