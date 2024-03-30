@@ -31,7 +31,7 @@ services:
     volumes:
       - ../Exentriq-EMA/node_modules:/var/app/Exentriq-EMA/node_modules
       - ema-local:/var/app/Exentriq-EMA/.meteor/local
-      - ../Exentriq-MSP/packages:/var/app/Exentriq-MSP/packages
+      - msp-packages:/var/app/Exentriq-MSP/packages
     develop:
       watch:
         - action: sync
