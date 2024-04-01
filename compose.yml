@@ -29,8 +29,9 @@ services:
       - redis
       - mongo
     volumes:
-      - ../Exentriq-EMA/node_modules:/var/app/Exentriq-EMA/node_modules
-      - ema-local:/var/app/Exentriq-EMA/.meteor/local
+      - ema_node_modules:/var/app/Exentriq-EMA/node_modules
+      - ema-meteor-local:/var/app/Exentriq-EMA/.meteor/local
+      - /var/app/Exentriq-MSP/npm/exentriq-components:/var/app/Exentriq-EMA/node_modules/exentriq-components
       - msp-packages:/var/app/Exentriq-MSP/packages
     develop:
       watch:
@@ -46,8 +47,10 @@ services:
             - ../Exentriq-EMA/packages/**/*.npm
 
 volumes:
-  ema-local:
+  ema-meteor-local:
+  ema_node_modules:
   ema-packages:
+  ema-imports:
   msp-packages:
 
   mongo-data:
