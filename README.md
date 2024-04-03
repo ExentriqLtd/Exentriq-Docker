@@ -1,4 +1,4 @@
-## To clone and prepare the project from scratch:
+## To up the project from scratch:
 1. Create a new folder somewhere called `Exentriq` (any name)
 2. Go inside that folder and clone this repo
 3. Go inside a new clone repo `cd Exentriq-Docker`
