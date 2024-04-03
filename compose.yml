@@ -22,16 +22,15 @@ services:
     build:
       dockerfile: ./Exentriq-Docker/configs/projects/ema/Dev.Dockerfile
       context: ../
-      no_cache: true
+#      no_cache: true
     ports:
       - 3002:3002
     depends_on:
       - redis
       - mongo
     volumes:
-      - ema_node_modules:/var/app/Exentriq-EMA/node_modules
-      - ema-meteor-local:/var/app/Exentriq-EMA/.meteor/local
-      - /var/app/Exentriq-MSP/npm/exentriq-components:/var/app/Exentriq-EMA/node_modules/exentriq-components
+      - ../Exentriq-EMA/node_modules:/var/app/Exentriq-EMA/node_modules
+      - ../Exentriq-EMA/.meteor/local:/var/app/Exentriq-EMA/.meteor/local
       - msp-packages:/var/app/Exentriq-MSP/packages
     develop:
       watch:
@@ -45,10 +44,13 @@ services:
           target: /var/app/Exentriq-EMA/packages
           ignore:
             - ../Exentriq-EMA/packages/**/*.npm
+        - action: sync
+          path: ../Exentriq-MSP/npm/exentriq-components/build
+          target: var/app/node_modules/exentriq-components/build
 
 volumes:
   ema-meteor-local:
-  ema_node_modules:
+  ema-node-modules:
   ema-packages:
   ema-imports:
   msp-packages:
