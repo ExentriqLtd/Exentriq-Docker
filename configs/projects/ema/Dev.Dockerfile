@@ -17,6 +17,8 @@ COPY ./Exentriq-MSP ${APP_PATH}/Exentriq-MSP
 COPY ./Exentriq-EMA ${APP_PATH}/Exentriq-EMA
 
 RUN npm config set registry https://registry.npmjs.org/
+RUN cd ${APP_PATH}/Exentriq-MSP && git submodule update --init --recursive
+# prepare Custom Board
 RUN cd ${APP_PATH}/Exentriq-MSP/npm/exentriq-components && npm rebuild node-sass
 RUN cd ${APP_PATH}/Exentriq-MSP/npm/exentriq-components && npm i
 RUN cd ${APP_PATH}/Exentriq-MSP/npm/exentriq-components && npm run build_meteor
