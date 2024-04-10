@@ -1,0 +1,21 @@
+# the context is the project's parent directory. it's needed to get MSP and other packages
+#
+# docker build ../.. -f Local.Dockerfile --tag exentriq-components-1.0.0 --no-cache
+# docker run --name exentriq-components exentriq-components-1.0.0
+
+# Ignore everything
+*
+
+# Allow files and directories
+!Exentriq-MSP/npm/exentriq-components
+
+## Ignore unnecessary files inside allowed directories
+Exentriq-MSP/npm/exentriq-components/node_modules/
+Exentriq-MSP/npm/exentriq-components/build/
+
+## Ignore meta files
+**/*~
+**/*.log
+**/*.npm
+**/.DS_Store
+**/Thumbs.db

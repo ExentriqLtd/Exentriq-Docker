@@ -2,8 +2,6 @@ services:
   mongo:
     image: mongo:4.4.29
     container_name: mongo
-    build:
-      context: ./configs/services/mongo
     restart: always
     ports:
       - 27017:27017
@@ -49,13 +47,5 @@ services:
           target: var/app/node_modules/exentriq-components/build
 
 volumes:
-  ema-meteor-local:
-  ema-node-modules:
-  ema-packages:
-  ema-imports:
   msp-packages:
-
   mongo-data:
-
-  custom-board-node-modules:
-  custom-board-build:

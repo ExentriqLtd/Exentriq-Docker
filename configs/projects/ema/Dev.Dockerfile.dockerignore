@@ -12,6 +12,8 @@
 !exentriq-packages
 !Exentriq-MSP/packages/
 !Exentriq-MSP/npm/
+# required to run: git submodule update --init --recursive
+!Exentriq-MSP/.git
 
 # EMA
 !Exentriq-EMA/.meteor
