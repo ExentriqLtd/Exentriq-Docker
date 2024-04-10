@@ -11,6 +11,7 @@ repositories=(
   "git@github.com:ExentriqLtd/Exentriq-MSP.git"
   "git@github.com:ExentriqLtd/Exentriq-EMA.git"
   "git@github.com:ExentriqLtd/Exentriq-ROMEO.git"
+  "git@github.com:ExentriqLtd/Exentriq-MXGraph.git"
 )
 
 for repo_url in "${repositories[@]}"

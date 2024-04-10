@@ -13,8 +13,7 @@ cd "$parent_dir/Exentriq-MSP/npm/exentriq-components"
 git submodule update --init --recursive
 npm rebuild node-sass
 npm i
-# prepare Custom Board for meteor projects (EMA/ROMEO)
-npm run build_meteor
+npm run build
 
 # prepare EMA
 cd "$parent_dir/Exentriq-EMA"
