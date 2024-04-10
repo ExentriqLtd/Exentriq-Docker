@@ -28,8 +28,9 @@ RUN cd ${APP_PATH}/Exentriq-MSP/npm/exentriq-components && npm run build_meteor
 RUN meteor npm i
 
 #RUN mkdir -p ${APP_PATH}/Exentriq-EMA/node_modules/exentriq-components/build/esm
-COPY ${APP_PATH}/Exentriq-MSP/npm/exentriq-components ./node_modules/exentriq-components
-# RUN cp -r ${APP_PATH}/Exentriq-MSP/npm/exentriq-components ${APP_PATH}/Exentriq-EMA/node_modules
+#COPY ${APP_PATH}/Exentriq-MSP/npm/exentriq-components ./node_modules/exentriq-components
+RUN meteor npm unlink ${APP_PATH}/Exentriq-MSP/npm/exentriq-components
+RUN cp -r ${APP_PATH}/Exentriq-MSP/npm/exentriq-components ./node_modules
 
 #RUN chown -Rh node ${APP_PATH}/Exentriq-EMA/.meteor/local
 #RUN chmod -R 700 ${APP_PATH}/Exentriq-EMA/.meteor/local

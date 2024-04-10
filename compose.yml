@@ -46,6 +46,22 @@ services:
           path: ../Exentriq-MSP/npm/exentriq-components/build
           target: var/app/node_modules/exentriq-components/build
 
+  exentriq_components:
+    container_name: "exentriq-components"
+    build:
+      dockerfile: ./Exentriq-Docker/configs/projects/exentriq-components/Dev.Dockerfile
+      context: ../
+#      no_cache: true
+    ports:
+      - 8081:8081
+    depends_on:
+      - ema
+    develop:
+      watch:
+        - action: sync
+          path: ../Exentriq-MSP/npm/exentriq-components/src
+          target: /var/app/exentriq-components/src
+
 volumes:
   msp-packages:
   mongo-data:
