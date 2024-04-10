@@ -11,7 +11,16 @@
 !meteor-streamer/packages
 !exentriq-packages
 !Exentriq-MSP/packages/
-!Exentriq-MSP/npm/
+!Exentriq-MSP/npm/exentriq-components/scripts
+!Exentriq-MSP/npm/exentriq-components/src
+!Exentriq-MSP/npm/exentriq-components/stories
+!Exentriq-MSP/npm/exentriq-components/.meteorignore
+!Exentriq-MSP/npm/exentriq-components/babel.config.js
+!Exentriq-MSP/npm/exentriq-components/base.config.js
+!Exentriq-MSP/npm/exentriq-components/dev.config.js
+!Exentriq-MSP/npm/exentriq-components/package.json
+!Exentriq-MSP/npm/exentriq-components/prod.config.js
+!Exentriq-MSP/npm/exentriq-components/prod_legacy.config.js
 # required to run: git submodule update --init --recursive
 !Exentriq-MSP/.git
 
