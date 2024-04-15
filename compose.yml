@@ -6,7 +6,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./configs/services/mongo/mongod.conf:/etc/mongod.conf:cached
+      - ./configs/services/mongo/mongod.conf:/etc/mongod.conf
       - mongo-data:/var/lib/mongodb
 
   redis:
