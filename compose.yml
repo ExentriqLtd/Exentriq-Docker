@@ -7,7 +7,7 @@ services:
       - 27017:27017
     volumes:
       - ./configs/services/mongo/mongod.conf:/etc/mongod.conf:cached
-      - mongo-data:/data/db
+      - mongo-data:/var/lib/mongodb
 
   redis:
     image: redis:7.2.4
